@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¡Feliz Día del Padre, Papá!</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(to right, #6dd5ed, #2193b0);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      max-width: 90%;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+      background: linear-gradient(90deg, #ffd700, #ffa500, #ffd700);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: gradientText 5s linear infinite, fadeInUp 1s ease-in-out;
+      background-size: 200%;
+    }
+
+    p {
+      font-size: 1.5em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      animation: textShadowChange 5s infinite alternate;
+    }
+
+    .image-container {
+      margin-top: 25px;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      width: 400px;
+      border: 5px solid #ffd700;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes gradientText {
+      0% { background-position: 0%; }
+      100% { background-position: 100%; }
+    }
+
+    @keyframes textShadowChange {
+      0% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+      100% { text-shadow: -2px -2px 4px rgba(0, 0, 0, 0.5); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 4s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { transform: scale(0.5); opacity: 0.8; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>¡Feliz Día del Padre!</h1>
+    <p>Espero que en la medida de lo posible la pases bien, papá. Que te des un tiempo para ti mismo, comas algo rico o disfrutes de un momento de paz.</p>
+    <p>Te quiero mucho, papá. Cuídate bastante y que la pases muy bien hoy puede teñirte las canas tambien.</p>
+
+    <!-- Imagen decorativa centrada y reducida -->
+    <div class="image-container">
+      <img src="https://superedu.com.mx/wp-content/uploads/2022/06/Tarjeta-de-corazon-con-corbata-para-el-Dia-del-Padre.jpg" alt="Feliz día del padre">
+    </div>
+
+    <p style="font-style: italic; margin-top: 20px;">Att. tu hijo RENZO</p>
+  </div>
+
+  <script>
+    function createStar() {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      const size = Math.random() * 10 + 5;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.left = `${Math.random() * 100}vw`;
+      star.style.top = `${Math.random() * 100}vh`;
+      star.style.animationDelay = `${Math.random() * 2}s`;
+      document.body.appendChild(star);
+    }
+
+    for (let i = 0; i < 50; i++) {
+      createStar();
+    }
+  </script>
+</body>
+</html>
